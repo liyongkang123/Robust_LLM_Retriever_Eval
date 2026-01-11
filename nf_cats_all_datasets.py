@@ -73,7 +73,7 @@ def main():
     'msmarco',
     ]
 
-    # 创建空的DataFrame来存储结果
+    # Create an empty DataFrame to store the results.
     # results_df = pd.DataFrame(columns=['query_id', 'dataset_name', 'query_type'])
     results_list = []
 
@@ -90,8 +90,8 @@ def main():
         for query_id, query_text in tqdm(queries.items(), desc=f"Processing {dataset}/{split}", total=len(queries)):
             new_query_id = dataset + '__'+ split + '__'+ query_id
             category = get_nfqa_category_prediction(query_text)
-            # 添加新行到DataFrame
-            # 添加到列表
+            # Add new row to DataFrame
+            # Add to list
             dic_result= {
                 'query_id': new_query_id,
                 'dataset_name': dataset,
