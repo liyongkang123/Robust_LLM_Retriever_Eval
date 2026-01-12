@@ -122,7 +122,7 @@ def get_model_prompts_tasks(model_name, dataset_name):
 
     prompts = prompts_all[dataset_name]
 
-    if  model_name in  ['qwen3','linq','diver','gte','bge_reasoner'] : # qwen3 needs to only add this prompt to the query, the document does not need to
+    if  model_name in  ['qwen3', 'qwen3_4B', 'qwen3_0.6B', 'linq', 'diver', 'diver_1.7B', 'diver_0.6B', 'gte', 'bge_reasoner'] : # qwen3 requires adding this prompt only to queries, not documents
         prompts['query'] = f"Instruct: {prompts['query']}\nQuery:"
         # reasonir and bge_m3 and contriever do not need to
 
