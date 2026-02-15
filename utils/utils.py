@@ -151,11 +151,11 @@ def bright_scores_remove_excluded_ids(queries_raw, scores):
 
 def calculate_retrieval_metrics(results, qrels, k_values=[1, 5, 10, 25, 50, 100,1000], return_scores=False):
     import pytrec_eval
-    from beir.retrieval.custom_metrics_yk import mrr as mrr_func
+    from utils.beir_custom_metrics import mrr as mrr_func
 
     '''
     This function is copied from the resonir code, mainly using pytrec_eval to calculate ndcg map recall precision etc.
-    I also added the calculation of MRR@k in this function, refer to the mrr function in custom_metrics_yk.py
+    I also added the calculation of MRR@k in this function, refer to the mrr function in beir_custom_metrics.py
     This function returns two things:
     1. output: A dictionary containing the average values of ndcg map recall precision mrr etc.
     2. final_scores: A dictionary containing the scores of each query's various indicators, convenient for subsequent analysis
